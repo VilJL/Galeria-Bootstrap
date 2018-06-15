@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Galeria de Imagenes" />
+    <meta name="keywords" content="HTML,CSS,JavaScript,DOM,AJAX,Json,PHP,MySql,Laravel" /> 
+    <meta name="author" content="Jesus Lopez" />
+
+    <title>Galería de imagenes</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Estilos personalizados para esta plantilla -->
+    <link href="css/full-slider.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+      <div class="container">
+
+        <!-- Logo de la empresa o nombre -->
+        <a class="navbar-brand" href="#">
+          <img src="img/images.svg" width="40" height="40" alt="Logo_galería" class="d-inline-block align-top">  Galeria
+        </a>
+        <!-- fin logo de la empresa -->
+
+        <!-- Menú a la derecha -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Fin del menu a la derecha -->
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Diapositiva 1 -->
+          <div class="carousel-item active" style="background-image: url('img/imagen1.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Favorita N° 1</h3>
+              <p>Rainbow</p>
+            </div>
+          </div>
+          <!-- Diapositiva dos -->
+          <div class="carousel-item" style="background-image: url('img/imagen2.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Favorita N° 2</h3>
+              <p>Space</p>
+            </div>
+          </div>
+          <!-- Diapositiva tres -->
+          <div class="carousel-item" style="background-image: url('img/imagen3.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Favorita N° 3</h3>
+              <p>Woods</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      </div>
+    </header>
+    <!-- Fin del carousel -->
+
+    <!-- contenido de la pagina -->
+    
+
+    <section class="py-5">
+      <div class="container">
+          <h1 class="text-center display-4">Galería de imágenes con Bootstrap y JavaScript</h1>
+
+        <div class="card-columns" id="galeria">
+            
+<!-- código JavaScript -->
+          <script>
+            
+            var imagenes = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+
+            
+            var galeria = document.getElementById('galeria');
+
+           
+            for(card of imagenes){
+
+            
+            galeria.innerHTML += `
+            <div class="card">
+                <a href="" data-toggle="modal" data-target="#id${card}">
+                    <img src="img/${card}.jpg" alt="" class="card-img-top">
+                </a>
+                  <div class="modal fade" id="id${card}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+               
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+     
+                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+         
+                        <img src="img/${card}.jpg" alt="rio con puente" class="img-fluid rounded" />
+                    </div>
+
+                  </div>
+            </div>
+            `
+            }
+
+          </script>
+
+
+        </div>
+      </div>
+
+    <!-- Fin del contenido de la pagina -->
+
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Creado por Jesus Lopez Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+  
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+
+</html>
